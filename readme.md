@@ -3,6 +3,25 @@
 
 Frontend application for decentralized exchange based on SvelteKit with full routing and UI components.
 
+
+
+## Advanced Decentralized Trading Landing pages 
+
+![3.png](assets/3.png)
+
+
+## Trades pages
+
+![1.png](assets/1.png)
+
+
+## Help & Documentation pages
+
+![2.png](assets/2.png)
+
+
+
+
 ## Installation and Launch
 
 ### 1. Creating Project Structure
