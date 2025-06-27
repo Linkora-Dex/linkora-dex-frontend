@@ -1,0 +1,119 @@
+.price-ticker {
+ display: flex;
+ align-items: center;
+ gap: 8px;
+ padding: 6px 12px;
+ background: var(--surface-2);
+ border-radius: 6px;
+ border: 1px solid var(--border-color);
+ min-width: 200px;
+ font-family: 'JetBrains Mono', 'Consolas', monospace;
+ transition: all 0.2s ease;
+}
+
+.price-ticker.flash-up {
+ background: rgba(34, 197, 94, 0.1);
+ border-color: #22c55e;
+ animation: flash-green 0.3s ease-out;
+}
+
+.price-ticker.flash-down {
+ background: rgba(239, 68, 68, 0.1);
+ border-color: #ef4444;
+ animation: flash-red 0.3s ease-out;
+}
+
+.price-main {
+ display: flex;
+ align-items: center;
+ gap: 6px;
+}
+
+.price-value {
+ font-size: 16px;
+ font-weight: 600;
+ color: var(--text-primary);
+ transition: color 0.2s ease;
+}
+
+.price-direction {
+ font-size: 14px;
+ font-weight: bold;
+ transition: color 0.2s ease;
+}
+
+.price-direction.up {
+ color: #22c55e;
+}
+
+.price-direction.down {
+ color: #ef4444;
+}
+
+.price-direction.neutral {
+ color: var(--text-secondary);
+}
+
+.price-change {
+ display: flex;
+ flex-direction: column;
+ align-items: flex-end;
+ font-size: 12px;
+ line-height: 1.2;
+}
+
+.price-change-absolute {
+ font-weight: 500;
+ transition: color 0.2s ease;
+}
+
+.price-change-percentage {
+ font-weight: 400;
+ opacity: 0.8;
+ transition: color 0.2s ease;
+}
+
+.price-change.up .price-change-absolute,
+.price-change.up .price-change-percentage {
+ color: #22c55e;
+}
+
+.price-change.down .price-change-absolute,
+.price-change.down .price-change-percentage {
+ color: #ef4444;
+}
+
+.price-change.neutral .price-change-absolute,
+.price-change.neutral .price-change-percentage {
+ color: var(--text-secondary);
+}
+
+@keyframes flash-green {
+ 0% { background: rgba(34, 197, 94, 0.3); }
+ 100% { background: rgba(34, 197, 94, 0.1); }
+}
+
+@keyframes flash-red {
+ 0% { background: rgba(239, 68, 68, 0.3); }
+ 100% { background: rgba(239, 68, 68, 0.1); }
+}
+
+@media (max-width: 768px) {
+ .price-ticker {
+  min-width: 160px;
+  gap: 6px;
+  padding: 4px 8px;
+ }
+
+ .price-value {
+  font-size: 14px;
+ }
+
+ .price-direction {
+  font-size: 12px;
+ }
+
+ .price-change {
+  font-size: 11px;
+ }
+}
