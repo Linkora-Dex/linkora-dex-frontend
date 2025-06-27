@@ -1,120 +1,121 @@
+
 # DEX Frontend - SvelteKit Application
 
-Фронтенд приложение для децентрализованной биржи на базе SvelteKit с полным роутингом и UI компонентами.
+Frontend application for decentralized exchange based on SvelteKit with full routing and UI components.
 
-## Установка и запуск
+## Installation and Launch
 
-### 1. Создание структуры проекта
+### 1. Creating Project Structure
 
-Выполните Python скрипт для создания всех необходимых файлов:
+Execute Python script to create all necessary files:
 
 
 
-### Установка зависимостей
+### Installing Dependencies
 
 ```bash
 npm install
 ```
 
-### Запуск в режиме разработки
+### Running in Development Mode
 
 ```bash
 npm run dev
 ```
 
-Приложение будет доступно по адресу `http://localhost:5173`
+Application will be available at `http://localhost:5173`
 
-### 4. Сборка для продакшена
+### 4. Building for Production
 
 ```bash
 npm run build
 npm run preview
 ```
 
-## Структура проекта
+## Project Structure
 
 ```
 src/
-├── routes/                    # Файловый роутинг SvelteKit
-│   ├── +layout.svelte        # Основной лейаут
-│   ├── +page.svelte          # Главная страница (редирект)
-│   ├── trade/                # Торговые страницы
-│   │   ├── +page.svelte      # Редирект на ETH-PERP
-│   │   └── [pair]/+page.svelte # Торговая страница
-│   ├── markets/+page.svelte  # Список рынков
-│   ├── portfolio/+page.svelte # Портфолио с табами
-│   ├── swap/+page.svelte     # Обмен токенов
-│   ├── earn/+page.svelte     # Заработок
-│   ├── rewards/+page.svelte  # Награды
-│   ├── settings/+page.svelte # Настройки
-│   └── help/+page.svelte     # Помощь
+├── routes/                    # SvelteKit file routing
+│   ├── +layout.svelte        # Main layout
+│   ├── +page.svelte          # Main page (redirect)
+│   ├── trade/                # Trading pages
+│   │   ├── +page.svelte      # Redirect to ETH-PERP
+│   │   └── [pair]/+page.svelte # Trading page
+│   ├── markets/+page.svelte  # Markets list
+│   ├── portfolio/+page.svelte # Portfolio with tabs
+│   ├── swap/+page.svelte     # Token swap
+│   ├── earn/+page.svelte     # Earning
+│   ├── rewards/+page.svelte  # Rewards
+│   ├── settings/+page.svelte # Settings
+│   └── help/+page.svelte     # Help
 ├── lib/
-│   ├── components/           # Переиспользуемые компоненты
-│   │   ├── common/          # Общие компоненты
-│   │   ├── trading/         # Торговые компоненты
-│   │   ├── portfolio/       # Компоненты портфолио
-│   │   └── ui/              # Базовые UI компоненты
-│   ├── stores/              # Состояние приложения
-│   ├── utils/               # Утилиты и бизнес-логика
-│   └── styles/              # Глобальные стили
-└── app.html                 # HTML шаблон
+│   ├── components/           # Reusable components
+│   │   ├── common/          # Common components
+│   │   ├── trading/         # Trading components
+│   │   ├── portfolio/       # Portfolio components
+│   │   └── ui/              # Basic UI components
+│   ├── stores/              # Application state
+│   ├── utils/               # Utilities and business logic
+│   └── styles/              # Global styles
+└── app.html                 # HTML template
 ```
 
-## Функциональность
+## Functionality
 
 
-#### Роутинг и навигация
-- Полный файловый роутинг SvelteKit
-- Навигационное меню с дропдаунами
-- Мобильная версия с гамбургер меню
-- Активные состояния навигации
-- Автоматические редиректы
+#### Routing and Navigation
+- Full SvelteKit file routing
+- Navigation menu with dropdowns
+- Mobile version with hamburger menu
+- Active navigation states
+- Automatic redirects
 
-#### Страницы
-- **Торговля** (`/trade/`)
-  - График цены
-  - Стакан ордеров
-  - Форма создания ордеров
-  - Последние сделки
+#### Pages
+- **Trading** (`/trade/`)
+  - Price chart
+  - Order book
+  - Order creation form
+  - Recent trades
   
-- **Рынки** (`/markets`)
-  - Список торговых пар
-  - Фильтрация и поиск
-  - Сортировка по параметрам
+- **Markets** (`/markets`)
+  - Trading pairs list
+  - Filtering and search
+  - Sorting by parameters
 
-- **Портфолио** (`/portfolio`)
-  - Табы: Позиции, Ордера, Балансы, История
-  - Общая статистика портфолио
-  - Кнопки депозита/вывода
+- **Portfolio** (`/portfolio`)
+  - Tabs: Positions, Orders, Balances, History
+  - General portfolio statistics
+  - Deposit/withdrawal buttons
 
 - **Swap** (`/swap`)
-  - Форма обмена токенов
-  - Выбор токенов из дропдауна
-  - Расчет комиссий и slippage
+  - Token swap form
+  - Token selection from dropdown
+  - Fee and slippage calculation
 
-- **Остальные страницы**
+- **Other Pages**
   - Earn, Settings, Help
 
-#### Компоненты
-- Подключение кошелька
-- Базовые UI компоненты (Button, Input, Modal, Table, Tabs)
-- Торговые компоненты
-- Компоненты портфолио
+#### Components
+- Wallet connection
+- Basic UI components (Button, Input, Modal, Table, Tabs)
+- Trading components
+- Portfolio components
 
-#### Состояние
-- Wallet store для управления кошельком
-- Trading store для торговых операций
-- Portfolio store для данных портфолио
+#### State
+- Wallet store for wallet management
+- Trading store for trading operations
+- Portfolio store for portfolio data
 
 
-## Технологии
+## Technologies
 
-- **SvelteKit** - фреймворк
-- **Tailwind CSS** - стилизация
-- **Ethers.js** - взаимодействие с блокчейном
-- **Web3** - дополнительная поддержка Web3
-- **Axios** - HTTP клиент
-- **PostCSS** - обработка CSS
+- **SvelteKit** - framework
+- **Tailwind CSS** - styling
+- **Ethers.js** - blockchain interaction
+- **Web3** - additional Web3 support
+- **Axios** - HTTP client
+- **PostCSS** - CSS processing
 
 
 
